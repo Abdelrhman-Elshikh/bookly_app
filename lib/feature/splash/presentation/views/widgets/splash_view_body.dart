@@ -1,6 +1,9 @@
 import 'package:bookly_app/core/utils/app_images.dart';
+import 'package:bookly_app/feature/home/resentation/view/home_view.dart';
 import 'package:bookly_app/feature/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:bookly_app/core/utils/constants.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -11,18 +14,17 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
+  /// Animation controller for the sliding animation.//+
   late AnimationController animationController;
+//+
+  /// Animation for the sliding text widget.//+
   late Animation<Offset> slidingAnimation;
 
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(duration: const Duration(seconds: 1), vsync: this);
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 3), end: const Offset(0, 0))
-            .animate(animationController);
-    animationController.forward();
+    initSlidingAnimation();
+    navigateToHome();
   }
 
   @override
@@ -38,8 +40,32 @@ class _SplashViewBodyState extends State<SplashViewBody>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(Assets.assetsImagesLogo),
-        SlidingText(slidingAnimation: slidingAnimation, text: "Read Free Books",)
+        SlidingText(
+          slidingAnimation: slidingAnimation,
+          text: "Read Free Books",
+        )
       ],
     );
+  }
+
+  /// Handles the transition to the home page.//+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(
+        () => const HomeView(),
+        transition: Transition.fade,
+        duration: KTransitionDuration,
+      );
+    });
+  }
+
+  /// Initializes the sliding animation.//+
+  void initSlidingAnimation() {
+    animationController =
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 3), end: const Offset(0, 0))
+            .animate(animationController);
+    animationController.forward();
   }
 }
