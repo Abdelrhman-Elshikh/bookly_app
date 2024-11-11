@@ -10,6 +10,8 @@ void main() {
     DevicePreview(
       builder: (context) => const BooklyAPP(), // Wrap your app
     ),
+
+    // const BooklyAPP()
   );
 }
 
