@@ -17,13 +17,11 @@ class BestSellerListViewItem extends StatelessWidget {
       },
       child: Row(
         children: [
-          SizedBox(
-            // height: MediaQuery.sizeOf(context).height * 0.19,
-            height: 130,
+          Expanded(
+            flex: 2,
             child: AspectRatio(
               aspectRatio: 2 / 3,
               child: Container(
-                // width: MediaQuery.sizeOf(context).width * 0.,
                 decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     color: Colors.red,
@@ -33,11 +31,11 @@ class BestSellerListViewItem extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 30),
-          SizedBox(
-            width: MediaQuery.sizeOf(context).width * 0.6,
+          const SizedBox(width: 20),
+          Expanded(
+            flex: 5,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
                   'Harry Potter and the Goblet of Fire',
@@ -50,12 +48,22 @@ class BestSellerListViewItem extends StatelessWidget {
                 const Text('body', style: Styles.textStyle14),
                 const SizedBox(height: 5),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('19.99\$',
-                        style: Styles.textStyle18
-                            .copyWith(fontWeight: FontWeight.bold)),
-                    const Rating(),
+                    Expanded(
+                      child: FittedBox(
+                        alignment: Alignment.centerLeft,
+                        fit: BoxFit.scaleDown,
+                        child: Text('19.99\$',
+                            style: Styles.textStyle18
+                                .copyWith(fontWeight: FontWeight.bold)),
+                      ),
+                    ),
+                    const Expanded(
+                      child: FittedBox(
+                          alignment: Alignment.centerRight,
+                          fit: BoxFit.scaleDown,
+                          child: Rating()),
+                    ),
                   ],
                 ),
               ],

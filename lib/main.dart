@@ -1,16 +1,15 @@
 import 'package:bookly_app/core/utils/routers/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:bookly_app/core/utils/constants.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      builder: (context) => const BooklyAPP(), // Wrap your app
-    ),
+    // DevicePreview(
+    //   builder: (context) => const BooklyAPP(), // Wrap your app
+    // ),
 
-    // const BooklyAPP()
+    const BooklyAPP()
   );
 }
 
