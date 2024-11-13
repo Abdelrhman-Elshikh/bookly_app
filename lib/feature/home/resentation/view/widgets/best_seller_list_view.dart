@@ -9,9 +9,13 @@ class BestSellerListView extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
-          return const Padding(
-            padding: EdgeInsets.only(bottom: 20.0, left: 16.0, right: 16.0),
-            child: BestSellerListViewItem(),
+          return Padding(
+            padding:
+                const EdgeInsets.only(bottom: 20.0, left: 16.0, right: 16.0),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxHeight: 150),
+              child: const BestSellerListViewItem(),
+            ),
           );
         },
         childCount: 20,

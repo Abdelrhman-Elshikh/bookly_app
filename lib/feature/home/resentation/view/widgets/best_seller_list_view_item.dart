@@ -17,23 +17,19 @@ class BestSellerListViewItem extends StatelessWidget {
       },
       child: Row(
         children: [
-          Expanded(
-            flex: 2,
-            child: AspectRatio(
-              aspectRatio: 2 / 3,
-              child: Container(
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
-                    color: Colors.red,
-                    image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage(Assets.assetsImagesTestImage))),
-              ),
+          AspectRatio(
+            aspectRatio: 2 / 3,
+            child: Container(
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(16)),
+                  color: Colors.red,
+                  image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage(Assets.assetsImagesTestImage))),
             ),
           ),
           const SizedBox(width: 20),
           Expanded(
-            flex: 5,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [

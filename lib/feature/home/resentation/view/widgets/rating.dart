@@ -13,13 +13,18 @@ class Rating extends StatelessWidget {
           FontAwesomeIcons.solidStar,
           color: Colors.amber[300],
         ),
+        const SizedBox(width: 6),
         const Text(
           ' 4.8 ',
           style: Styles.textStyle16,
         ),
-        const Text(
-          '(2390)',
-          style: Styles.textStyle14,
+        const SizedBox(width: 3),
+        const Opacity(
+          opacity: 0.5,
+          child: Text(
+            '(2390)',
+            style: Styles.textStyle14,
+          ),
         ),
       ],
     );

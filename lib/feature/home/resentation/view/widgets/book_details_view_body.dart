@@ -1,6 +1,8 @@
 import 'package:bookly_app/core/utils/style.dart';
 import 'package:bookly_app/feature/home/resentation/view/widgets/book_details_app_bar.dart';
-import 'package:bookly_app/feature/home/resentation/view/widgets/list_view_item.dart';
+import 'package:bookly_app/feature/home/resentation/view/widgets/custom_list_view.dart';
+import 'package:bookly_app/feature/home/resentation/view/widgets/custom_list_view_item.dart';
+import 'package:bookly_app/feature/home/resentation/view/widgets/price_or_preview_widget.dart';
 import 'package:bookly_app/feature/home/resentation/view/widgets/rating.dart';
 import 'package:flutter/material.dart';
 
@@ -9,53 +11,71 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.sizeOf(context).width;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const BookDetailsAppBar(),
-          const SizedBox(height: 10),
-          const Expanded(
-            flex: 2,
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: CustomListViewItem(),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Expanded(
-            child: FittedBox(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.0),
+            child: BookDetailsAppBar()),
+        const SizedBox(height: 30),
+        const Expanded(
+          flex: 7,
+          child: FittedBox(fit: BoxFit.scaleDown, child: CustomListViewItem()),
+        ),
+        const SizedBox(height: 40),
+        Expanded(
+          child: FittedBox(
               fit: BoxFit.scaleDown,
               alignment: Alignment.center,
               child: Text(
                 'The Jungle Book',
-                style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Expanded(
-            child: FittedBox(
+                style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
+              )),
+        ),
+        const SizedBox(height: 5),
+        Expanded(
+          child: FittedBox(
               fit: BoxFit.scaleDown,
               alignment: Alignment.center,
+              child: Opacity(
+                  opacity: 0.7,
+                  child: Text(
+                    'Rudyard Kipling',
+                    style: Styles.textStyle18.copyWith(
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ))),
+        ),
+        const SizedBox(height: 5),
+        const Expanded(
+          child: FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.center,
+              child: Rating()),
+        ),
+        const SizedBox(height: 5),
+        const Expanded(
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.center,
+            child: PriceOrPreviewWidget(),
+          ),
+        ),
+        const SizedBox(height: 60),
+        Expanded(
+          child: FittedBox(
+              alignment: Alignment.centerLeft,
+              fit: BoxFit.scaleDown,
               child: Text(
-                'Rudyard Kipling',
-                style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          const Expanded(
-            child: FittedBox(
-                fit: BoxFit.scaleDown,
-                alignment: Alignment.center,
-                child: Rating()),
-          ),
-          const SizedBox(height: 10),
-        ],
-      ),
+                'You can also like',
+                style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
+              )),
+        ),
+        const SizedBox(height: 10),
+        const Expanded(flex: 4, child: CustomListView()),
+        const SizedBox(height: 10),
+      ],
     );
   }
 }
