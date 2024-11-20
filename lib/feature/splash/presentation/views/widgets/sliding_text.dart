@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SlidingText extends StatelessWidget {
@@ -17,7 +16,7 @@ class SlidingText extends StatelessWidget {
         builder: (context, _) {
           return SlideTransition(
             position: slidingAnimation,
-            child:  Padding(
+            child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 text,
