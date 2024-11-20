@@ -16,9 +16,10 @@ class CustomListViewItem extends StatelessWidget {
               color: Colors.red,
               image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: AssetImage(Assets.assetsImagesTestImage))),
-        ),
+                image: AssetImage(
+                  Assets.assetsImagesTestImage,
+                ))),
       ),
-    );
+        ));
   }
 }
