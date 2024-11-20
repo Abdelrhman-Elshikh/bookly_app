@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/feature/custom_button/view/custom_button.dart';
 import 'package:bookly_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
@@ -6,52 +7,42 @@ class PriceOrPreviewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Container(
-            alignment: Alignment.center,
-            width: 230,
-            height: 70,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.horizontal(
+    return SizedBox(
+      height: 1,
+      child: Row(
+        children: [
+          Expanded(
+            child: CustomButton(
+              backgroundColor: Colors.white,
+              borderRadius: const BorderRadius.horizontal(
                 left: Radius.circular(16),
               ),
-            ),
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                '19.99\$',
-                style: Styles.textStyle30
-                    .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  '19.99\$',
+                  style: Styles.textStyle16.copyWith(
+                      fontWeight: FontWeight.w900, color: Colors.black),
+                ),
               ),
             ),
           ),
-        ),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Container(
-            alignment: Alignment.center,
-            width: 230,
-            height: 70,
-            decoration: const BoxDecoration(
-              color: Colors.orange,
-              borderRadius: BorderRadius.horizontal(
+          Expanded(
+            child: CustomButton(
+              backgroundColor: Colors.orange,
+              borderRadius: const BorderRadius.horizontal(
                 right: Radius.circular(16),
               ),
-            ),
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text('Free Preview',
-                  style:
-                      Styles.textStyle30.copyWith(fontWeight: FontWeight.bold)),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text('Free Preview',
+                    style: Styles.textStyle30
+                        .copyWith(fontWeight: FontWeight.w900)),
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -17,52 +17,47 @@ class BookDetailsViewBody extends StatelessWidget {
         const Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.0),
             child: BookDetailsAppBar()),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
         const Expanded(
-          flex: 7,
+          flex: 10,
           child: FittedBox(fit: BoxFit.scaleDown, child: CustomListViewItem()),
         ),
         const SizedBox(height: 40),
         Expanded(
           child: FittedBox(
-              fit: BoxFit.scaleDown,
-              alignment: Alignment.center,
+              // fit: BoxFit.scaleDown,
               child: Text(
-                'The Jungle Book',
-                style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
-              )),
+            'The Jungle Book',
+            style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
+          )),
         ),
-        const SizedBox(height: 5),
+        const SizedBox(height: 6),
         Expanded(
           child: FittedBox(
               fit: BoxFit.scaleDown,
-              alignment: Alignment.center,
               child: Opacity(
                   opacity: 0.7,
                   child: Text(
                     'Rudyard Kipling',
-                    style: Styles.textStyle18.copyWith(
+                    style: Styles.textStyle16.copyWith(
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.w500,
                     ),
                   ))),
         ),
-        const SizedBox(height: 5),
+        const SizedBox(height: 20),
         const Expanded(
           child: FittedBox(
               fit: BoxFit.scaleDown,
               alignment: Alignment.center,
               child: Rating()),
         ),
-        const SizedBox(height: 5),
+        const SizedBox(height: 30),
         const Expanded(
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            alignment: Alignment.center,
-            child: PriceOrPreviewWidget(),
-          ),
+          flex: 2,
+          child: PriceOrPreviewWidget(),
         ),
-        const SizedBox(height: 60),
+        const SizedBox(height: 40),
         Expanded(
           child: FittedBox(
               alignment: Alignment.centerLeft,
@@ -73,7 +68,7 @@ class BookDetailsViewBody extends StatelessWidget {
               )),
         ),
         const SizedBox(height: 10),
-        const Expanded(flex: 4, child: CustomListView()),
+        const Expanded(flex: 6, child: CustomListView()),
         const SizedBox(height: 10),
       ],
     );
