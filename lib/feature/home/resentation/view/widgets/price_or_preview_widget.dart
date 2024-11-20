@@ -36,8 +36,10 @@ class PriceOrPreviewWidget extends StatelessWidget {
               child: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text('Free Preview',
-                    style: Styles.textStyle30
-                        .copyWith(fontWeight: FontWeight.w900)),
+                    style: Styles.textStyle30.copyWith(
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                    )),
               ),
             ),
           ),

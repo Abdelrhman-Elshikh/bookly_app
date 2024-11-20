@@ -12,11 +12,21 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(Assets.assetsImagesLogo, height: 24),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(FontAwesomeIcons.magnifyingGlass),
-            iconSize: 30,
+          Expanded(
+              child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Image.asset(Assets.assetsImagesLogo, height: 24))),
+          Expanded(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(FontAwesomeIcons.magnifyingGlass),
+                iconSize: 30,
+              ),
+            ),
           )
         ],
       ),

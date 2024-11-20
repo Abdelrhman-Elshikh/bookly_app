@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:bookly_app/core/utils/style.dart';
 
 class CustomButton extends StatelessWidget {
   final BorderRadiusGeometry borderRadius;
@@ -17,13 +16,16 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-        onPressed: onTap ?? () {},
-        style: TextButton.styleFrom(
-            backgroundColor: backgroundColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: borderRadius,
-            )),
-        child: child);
+    return SizedBox(
+      height: 48 ,
+      child: TextButton(
+          onPressed: onTap ?? () {},
+          style: TextButton.styleFrom(
+              backgroundColor: backgroundColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: borderRadius,
+              )),
+          child: child),
+    );
   }
 }
