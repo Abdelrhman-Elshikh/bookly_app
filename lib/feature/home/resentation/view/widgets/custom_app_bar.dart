@@ -1,5 +1,4 @@
 import 'package:bookly_app/core/utils/app_images.dart';
-import 'package:bookly_app/core/utils/routers/app_router.dart';
 import 'package:bookly_app/core/utils/routers/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
