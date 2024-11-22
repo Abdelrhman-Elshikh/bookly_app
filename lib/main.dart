@@ -5,7 +5,6 @@ import 'package:bookly_app/feature/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/feature/home/resentation/manger/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/feature/home/resentation/manger/newest_books_cubit/newest_books_cubit.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:bookly_app/core/utils/constants.dart';
@@ -14,11 +13,11 @@ import 'package:flutter_bloc/flutter_bloc.dart'; //+
 void main() {
   setup();
   runApp(
-    DevicePreview(
-      builder: (context) => const BooklyAPP(), // Wrap your app
-    ),
+    // DevicePreview(
+    //   builder: (context) => const BooklyAPP(), // Wrap your app
+    // ),
 
-    // const BooklyAPP()
+    const BooklyAPP()
   );
 }
 

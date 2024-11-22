@@ -23,7 +23,10 @@ class BookDetailsViewBody extends StatelessWidget {
               const Expanded(
                 flex: 10,
                 child: FittedBox(
-                    fit: BoxFit.scaleDown, child: CustomListViewItem()),
+                  fit: BoxFit.scaleDown, child: Placeholder(),
+
+                  //  CustomListViewItem(),
+                ),
               ),
               const SizedBox(height: 40),
               Expanded(
