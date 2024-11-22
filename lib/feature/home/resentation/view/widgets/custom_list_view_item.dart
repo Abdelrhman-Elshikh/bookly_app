@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:bookly_app/core/utils/app_images.dart';
 
 class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({super.key});
+  final String url;
+
+  const CustomListViewItem({super.key, required this.url});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: MediaQuery.sizeOf(context).height * 0.5,
-        child: AspectRatio(
+      height: MediaQuery.sizeOf(context).height * 0.5,
+      child: AspectRatio(
           aspectRatio: 2 / 3,
           child: Container(
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(24)),
-                color: Colors.red,
-                image: DecorationImage(
+              decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(24)),
+                  color: Colors.red,
+                  image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: AssetImage(
-                      Assets.assetsImagesTestImage,
-                    ))),
-          ),
-        ));
+                    image: NetworkImage(url),
+                  )))),
+    );
   }
 }

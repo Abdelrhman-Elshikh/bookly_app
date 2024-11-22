@@ -1,7 +1,6 @@
 import 'package:bookly_app/core/utils/style.dart';
 import 'package:bookly_app/feature/home/resentation/view/widgets/book_details_app_bar.dart';
 import 'package:bookly_app/feature/home/resentation/view/widgets/custom_list_view.dart';
-import 'package:bookly_app/feature/home/resentation/view/widgets/custom_list_view_item.dart';
 import 'package:bookly_app/feature/home/resentation/view/widgets/price_or_preview_widget.dart';
 import 'package:bookly_app/feature/home/resentation/view/widgets/rating.dart';
 import 'package:flutter/material.dart';

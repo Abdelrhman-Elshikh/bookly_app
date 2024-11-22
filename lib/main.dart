@@ -1,4 +1,3 @@
-import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:bookly_app/core/utils/routers/app_router.dart';
 import 'package:bookly_app/core/utils/service_locator.dart';
 import 'package:bookly_app/feature/home/data/repos/home_repo_impl.dart';
@@ -30,7 +29,7 @@ class BooklyAPP extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>())..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>()),
