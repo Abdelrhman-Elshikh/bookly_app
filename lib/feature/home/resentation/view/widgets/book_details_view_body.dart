@@ -56,7 +56,10 @@ class BookDetailsViewBody extends StatelessWidget {
                 child: FittedBox(
                     fit: BoxFit.scaleDown,
                     alignment: Alignment.center,
-                    child: Rating()),
+                    child: Rating(
+                      rating: 5,
+                      count: 2500,
+                    )),
               ),
               const SizedBox(height: 30),
               const Expanded(

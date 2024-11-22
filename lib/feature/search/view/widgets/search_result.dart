@@ -11,8 +11,8 @@ class SearchResult extends StatelessWidget {
         itemBuilder: (context, index) {
           return const IntrinsicHeight(
               child: Padding(
-            padding: EdgeInsets.only(bottom: 18.0),
-            child: BestSellerListViewItem(),
+            padding: EdgeInsets.only(bottom: 18.0), child: SliverToBoxAdapter(child: Placeholder()),
+            //  BestSellerListViewItem(),
           ));
         });
   }
